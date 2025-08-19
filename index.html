@@ -1,17 +1,22 @@
 <html>
-    <head>
+<head>
     <title>Profile</title>
+    <!-- Font Awesome CSS for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        .Header {
-            background-color: #92b6f1;
-            padding: 20px;
-            text-align: center;
-        }
         * {
             margin: 0;
         }
         body {
             font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .Header {
+            background-color: #92b6f1;
+            padding: 20px;
+            text-align: center;
         }
         .Header h1 {
             color: #000;
@@ -19,59 +24,102 @@
             text-align: left;
             position: relative; left: 300px;
         }
-
-    </style>
-    </head>
-    <body>
-        
-        <div class="Header">
-            <h1> De Leon Profile </h1>
-        </div>
-        <style>
-            .row {
-                display: flex;
-                margin: 20px;
-                border-radius: 20px; /* Added for rounded edges */
-                overflow: hidden;    /* Ensures children don't overflow the rounded corners */
-                box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Optional: subtle shadow for effect */
+        .container {
+            display: flex;
+            margin: 20px;
+            flex: 1;
+        }
+        .side {
+            flex: 0 0 300px;
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            height: calc(100vh - 60px);
+            position: sticky;
+            top: 20px;
+            align-self: flex-start;
+        }
+        .main {
+            flex: 1;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-left: 20px;
+        }
+        .fakeimg {
+            background-color: #aaa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+        .contact-info {
+            margin-top: 15px;
+            font-size: 1em;
+        }
+        .contact-info i {
+            margin-right: 8px;
+            color: #000;
+        }
+        .footer {
+            background-color: #92b6f1;
+            text-align: center;
+            padding: 15px;
+            margin-top: auto;
+            font-size: 0.9em;
+        }
+        @media screen and (max-width: 700px) {
+            .container {
+                flex-direction: column;
             }
             .side {
-                flex: 30%;
-                background-color: #f1f1f1;
-                padding: 20px;
+                position: static;
+                height: auto;
+                margin-bottom: 20px;
             }
             .main {
-                flex: 70%;
-                background-color: #ffffff;
-                padding: 20px;
+                margin-left: 0;
             }
-            .fakeimg {
-                background-color: #aaa;
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #fff;
-                font-size: 1.2em;
-                margin-bottom: 10px;
-            }
-            @media screen and (max-width: 700px) {
-                .row {
-                    flex-direction: column;
-                }
-            }
-        </style>
-        <div class="row">
-          <div class="side">
-            <div class="fakeimg" style="height:200px;">Image</div>
+        }
+    </style>
+</head>
+<body>
+    <div class="Header">
+        <h1> De Leon Profile </h1>
+    </div>
+    <div class="container">
+        <div class="side">
+            <div class="fakeimg profile-pic">Image</div>
+            <Br>
+            <h3>Clarence Benedict M. De Leon</h3>
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> 09XX-XXX-XXXX</p>
+                <p><i class="fas fa-envelope"></i> email@example.com</p>
+            </div>
+            <br>
             <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+            <br>
             <h3>More Text</h3>
             <p>Lorem ipsum dolor sit ame.</p>
-            <div class="fakeimg" style="height:60px;">Image</div><br>
-            <div class="fakeimg" style="height:60px;">Image</div><br>
-            <div class="fakeimg" style="height:60px;">Image</div>
-          </div>
-          <div class="main">
+            <br><br>
+            <h3>Skills</h3>
+            <ul>
+                <li>Skill 1</li>
+                <li>Skill 2</li>
+                <li>Skill 3</li>
+            </ul>
+        </div>
+        <div class="main">
             <h2>TITLE HEADING</h2>
             <h5>Title description, Dec 7, 2017</h5>
             <div class="fakeimg" style="height:200px;">Image</div>
@@ -83,7 +131,11 @@
             <div class="fakeimg" style="height:200px;">Image</div>
             <p>Some text..</p>
             <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-          </div>
         </div>
-    </body>
+    </div>
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>Clarence Benedict M. De Leon © All Rights Reserved</p>
+    </div>
+</body>
 </html>
